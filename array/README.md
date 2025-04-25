@@ -1,26 +1,26 @@
-public class LatihanArray1 {//Pendeklarasian nama kelas yang akan di publiknya diberi nama Latihan array1
+README.md
+public class PencarianArray2 {//Pendeklarasian nama kelas yang akan di publiknya diberi nama Latihan array2
     public static void main(String[] args) {//Pendeklarasian main metode atau awal mula proram dijalankan/masuk
-        // Buat program untuk:
-        // 1. Membuat array dengan 10 bilangan bulat
-        // 2. Mengisi array dengan bilangan genap mulai dari 2
-        // 3. Menampilkan isi array
-        // 4. Menghitung jumlah semua elemen array
+        // Program mencari nilai dalam array
+        int[] nilai = {75, 80, 65, 90, 85, 70, 95, 88};//Pendeklarasian []dan meninisialisasi [] dengan elemen/data bilangan bulat
+        int cari = 90;//Pendeklarasian dengan variabel "cari" dengan bilangan 90 int atau nilai yang akn dicari dlm array
+        boolean ketemu = false;//pendklarasian dengan menggunakan variabel "ketemu" menggunakan boolean,dan diawali dengan pencarian awal false,guna memberikan pernyataan apakah nilai ditemukan atau tidak
+        int indeks = -1;//pendklarasian yang diunakan untuk menyimpan indek pada elemen yang sudah ditemukan
 
-        int[] bilanganGenap = new int[10];//Menginisialisasi array satu dimensi []dengan bilangan genap berjumlah 10 elemen 
-        int jumlah = 0;//Menjelaskan bahwa jumlah  sama dengan nilai awal 0
-
-        // Mengisi array
-        for (int i = 0; i < bilanganGenap.length; i++) {//Loop for mengisi array dengan menggunakan bilangan genap yang akan dimulai dari 2,dan var i akan terus terulang dari null hingga  panjang array dikurangi 1
-            bilanganGenap[i] = (i + 1) * 2;//mengulang bilangan genap yang diberi var [i] diisi dengan var i + 1 dikalikan dengan 2
+        // Mencari nilai
+        for (int i = 0; i < nilai.length; i++) {//loop ini dugunakan untuk mengiterasi atau mengulang dalam setiap pencarian elemen array nilai dengan menggunakan var i sebagai indeksnya yang akan berulang hingga panjang array dikurai 1  
+            if (nilai[i] == cari) {//Berfungsi memeriksa apakah elemen i sama dengan nilai yang dicari
+                ketemu = true;//menyatakan jika ketemu maka dinyatakan true 
+                indeks = i;//menyatakan jika indek diubah menjadi i
+                break;//loop berhenti dengan menybeutkan break pada program
+            }
         }
 
-        // Menampilkan array
-        System.out.println("Isi array:");//Mencetak output pada terminal dengan "Isi array"
-        for (int bilangan : bilanganGenap) {//mengulang setiap elemen dari array billangan genap secara berurutan hingga elemen paling akhir
-            System.out.print(bilangan + " ");//Mencetak setiap elemen bilangan dari array billangan genap yang diikuti dengan spasi
-            jumlah += bilangan;//Menambahkan setap elemen bilangan array kedalam variabel jumlah
+        // Menampilkan hasil
+        if (ketemu) {//Pernyaaan if digunakan untuk memeriksa apakah kondisi nya menyatakan ketemu maka akan bernilai true
+            System.out.println("Nilai " + cari + " ditemukan pada indeks " + indeks);//Mencetak output pada terminal jika ketemu bernilai true yang akan menampilkan pesan "Nilai 90 ditemukan pada indeks 3"
+        } else {//Pernyataab else digunakan untuk memeriksa jika kondisi ketemu berniai false,maka program akan menjalakan ke program selanjutnya 
+            System.out.println("Nilai " + cari + " tidak ditemukan");//Jika bernilai false maka program akan mncetak output pada terminal "nilai 90 tidak ditemukan".
         }
-
-        System.out.println("Jumlah semua elemen: " + jumlah);//Mencetak output pada terminal dengan "Jumlah semua elemen" yang diikuti oleh variabel jumlah pada terminal,menambahkan baris senelum output print
     }
 }
